@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diákok kezelése</title>
+</head>
+<body>
+    <h1>Diákok kezelése</h1>
+    
+    <div>
+        <button onclick="fetchStudents()">Diákok megjelenítése</button>
+        <button onclick="showCreateStudentForm()">Diák létrehozása</button>
+    </div>
+
+    <div id="student-list"></div>
+    
+    <div id="create-student-form" style="display:none;">
+        <h3>Új diák létrehozása</h3>
+        <form onsubmit="createStudent(event)">
+            <label for="name">Név:</label>
+            <input type="text" id="name" required>
+            <br>
+            <button type="submit">Létrehozás</button>
+        </form>
+        <button onclick="cancelCreateStudent()">Mégse</button>
+    </div>
+
+    <div id="edit-student-form" style="display:none;">
+        <h3>Diák szerkesztése</h3>
+        <form onsubmit="editStudent(event)">
+            <input type="hidden" id="edit-student-id">
+            <label for="edit-name">Név:</label>
+            <input type="text" id="edit-name" required>
+            <br>
+            <button type="submit">Szerkesztés</button>
+        </form>
+        <button onclick="cancelEditStudent()">Mégse</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
